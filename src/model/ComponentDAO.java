@@ -40,7 +40,7 @@ public class ComponentDAO {
 			
 			while (rs.next()) {
 				
-				Component component = new Component(rs.getString("classify"),rs.getString("age"), rs.getInt("com_count"), rs.getString("com_place"));
+				Component component = new Component(rs.getString("classify"),rs.getString("dog_code"), rs.getInt("com_count"), rs.getString("com_place"));
 				componentList.add(component);
 			}
 			
@@ -86,17 +86,17 @@ public class ComponentDAO {
 			
 			System.out.println(componentList.size());
 			String SQL = "INSERT INTO dog_master";
-			SQL += "(age,classify,com_count,com_place)";
+			SQL += "(dog_code,classify,com_count,com_place)";
 			SQL += " VALUES(?,?,?,?)";
 				
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			for (Component component : componentList) {
-			String age = component.getComponentAge();
+			String code = component.getComponentCode();
 			String name = component.getComponentName();
 			int count = component.getComponentCount();
 			String location = component.getComponentPlace();
 				
-			pstmt.setString(1, age);
+			pstmt.setString(1, code);
 			pstmt.setString(2, name);
 			pstmt.setInt(3, count);
 			pstmt.setString(4, location);

@@ -28,7 +28,7 @@ public class ComDataController {
 	private void confirmAction() {
 		if(valid()) {
 			component.setComponentName(cnameField.getText());
-			component.setComponentAge(cnumberField.getText());
+			component.setComponentCode(cnumberField.getText());
 			component.setComponentCount(Integer.valueOf(ccountField.getText()));
 			component.setComponentPlace(clocField.getText());
 			
@@ -45,16 +45,16 @@ public class ComDataController {
 	private boolean valid() {
 		String errorMessge = "";
 		if( cnameField.getText() == null || cnameField.getText().equals("")) {
-			errorMessge += "부품 이름을 입력하세요. \n";
+			errorMessge += "견종을 입력하세요. \n";
 		}
 		if( cnumberField.getText() == null || cnumberField.getText().equals("")) {
-			errorMessge += "부품 코드을 입력하세요. \n";
+			errorMessge += "코드를 입력하세요. \n";
 		}
 		if( ccountField.getText() == null || ccountField.getText().equals("")) {
-			errorMessge += "수량을 입력하세요. \n";
+			errorMessge += "마릿수를 입력하세요. \n";
 		}
 		if( clocField.getText() == null || clocField.getText().equals("")) {
-			errorMessge += "위치를 입력하세요. \n";
+			errorMessge += "보호소위치를 입력하세요. \n";
 		}
 		if( errorMessge.equals("")) {
 			return true;
@@ -75,7 +75,7 @@ public class ComDataController {
 	public void setComponent(Component component) {
 		this.component = component;
 		cnameField.setText(component.getComponentName());
-		cnumberField.setText(component.getComponentAge());
+		cnumberField.setText(component.getComponentCode());
 		ccountField.setText(String.valueOf(component.getComponentCount()));
 		clocField.setText(component.getComponentPlace());
 

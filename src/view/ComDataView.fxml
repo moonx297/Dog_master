@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -11,31 +12,45 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ComDataController">
+<AnchorPane prefHeight="434.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ComDataController">
    <children>
-      <GridPane layoutX="14.0" layoutY="14.0" maxWidth="1.7976931348623157E308" prefHeight="234.0" prefWidth="372.0">
+      <GridPane layoutX="14.0" layoutY="36.0" maxWidth="1.7976931348623157E308" prefHeight="293.0" prefWidth="516.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="303.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.0" minWidth="10.0" prefWidth="253.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="157.0" minHeight="0.0" prefHeight="83.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="262.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="견 종" />
-            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="나이" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="코 드" GridPane.rowIndex="1" />
             <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="마릿수" GridPane.rowIndex="2" />
             <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="보호센터 위치" GridPane.rowIndex="3" />
             <TextField fx:id="cnameField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
-            <TextField fx:id="cnumberField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="cnumberField" maxWidth="1.7976931348623157E308" prefHeight="23.0" prefWidth="297.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="ccountField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="clocField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Button layoutX="200.0" layoutY="248.0" mnemonicParsing="false" onAction="#confirmAction" prefWidth="70.0" text="확인" />
-      <Button layoutX="301.0" layoutY="248.0" mnemonicParsing="false" onAction="#censerAction" prefWidth="70.0" text="취소" />
+      <Button layoutX="175.0" layoutY="352.0" mnemonicParsing="false" onAction="#confirmAction" prefHeight="9.0" prefWidth="90.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/ok_button.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="339.0" layoutY="352.0" mnemonicParsing="false" onAction="#censerAction" prefHeight="38.0" prefWidth="90.0">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/cancle_button.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

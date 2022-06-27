@@ -34,7 +34,7 @@ public class BarChartController {
 	public void setComponentList(List<Component> componentList) {
 		int[] counters = new int[26];
 		for(Component component : componentList) {
-			char character = component.getComponentAge().charAt(0);;
+			char character = component.getComponentCode().charAt(0);;
 			counters[character -65]++;
 		}
 		

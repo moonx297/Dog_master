@@ -106,7 +106,7 @@ public class Main extends Application {
 			AnchorPane page =  (AnchorPane) loader.load();
 			
 			Stage dialogStage = new Stage();
-			dialogStage.setTitle("부품 추가");
+			dialogStage.setTitle("수정 및 추가");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);

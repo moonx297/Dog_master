@@ -12,7 +12,7 @@ import model.Component;
 
 
 
-public class ComDataController {
+public class ComDataController {	//유기견 추가
 	
 	private Component component;
 	private Stage dialogStage;
@@ -45,20 +45,24 @@ public class ComDataController {
 	private boolean valid() {
 		String errorMessge = "";
 		if( cnameField.getText() == null || cnameField.getText().equals("")) {
-			errorMessge += "견종을 입력하세요. \n";
+			errorMessge += "견종을 입력하세요. \n";		
+			//값이 없거나 문자열이 비었을 때, 종을 입력하지 않았을 시 경고 메세지
 		}
 		if( cnumberField.getText() == null || cnumberField.getText().equals("")) {
-			errorMessge += "코드를 입력하세요. \n";
-		}
+			errorMessge += "코드를 입력하세요. \n";		
+			//값이 없거나 문자열이 비었을 때, 코드를 입력하지 않았을 시 경고 메세지
+		}	
 		if( ccountField.getText() == null || ccountField.getText().equals("")) {
-			errorMessge += "마릿수를 입력하세요. \n";
+			errorMessge += "마릿수를 입력하세요. \n";		
+			//값이 없거나 문자열이 비었을 때, 마릿수를 입력하지 않았을 시 경고 메세지
 		}
 		if( clocField.getText() == null || clocField.getText().equals("")) {
-			errorMessge += "보호소위치를 입력하세요. \n";
+			errorMessge += "보호소위치를 입력하세요. \n";	
+			//값이 없거나 문자열이 비었을 때, 보호소 위치를 입력하지 않았을 시 경고 메세지
 		}
 		if( errorMessge.equals("")) {
 			return true;
-		} else {
+		} else {	// 이외의 에러사항 경고창 띄우기
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.initOwner(dialogStage);
 			alert.setTitle("오류 메시지");

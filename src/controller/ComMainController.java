@@ -55,17 +55,17 @@ public class ComMainController implements Initializable{
 		componentTable.setItems(main.getComponentList());
 	}
 	@FXML
-	private void addAction() {
-		Component component = new Component("", "", 0, "");
+	private void addAction() {		//유기견 추가
+		Component component = new Component("", "", 0, "");	//string string int string
 		int returnValue = mainapp.setComponentDataView(component);
 		if ( returnValue == 1) {
 			mainapp.getComponentList().add(component);
 		}
 	}
 	@FXML
-	private void editAction() {
+	private void editAction() {		//유기견 정보 수정	
 		Component component = componentTable.getSelectionModel().getSelectedItem();
-		if ( component != null ) {
+		if ( component != null ) {  //선택을 하지 않을시 오류 메시지가 뜸
 			mainapp.setComponentDataView(component);
 		}
 		else {
@@ -78,12 +78,12 @@ public class ComMainController implements Initializable{
 		}
 	}
 	@FXML
-	private void deleteActiono() {
+	private void deleteActiono() {		//유기견 정보 삭제
 		int selectedIndex = componentTable.getSelectionModel().getSelectedIndex();
-		if ( selectedIndex >= 0) {
+		if ( selectedIndex >= 0) {		//0보다 작게 쓸 때에도 오류
 			componentTable.getItems().remove(selectedIndex);
 		}
-		else {
+		else {		//선택을 하지 않을시 뜨는 오류 메시지
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainapp.getPrimaryStage());
 			alert.setTitle("오류 메시지");

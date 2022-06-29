@@ -60,7 +60,6 @@ public class Main extends Application {
 			
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-//			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -102,11 +101,11 @@ public class Main extends Application {
 	public int setComponentDataView(Component component) {
 		try {
 			FXMLLoader loader =  new FXMLLoader();
-			loader.setLocation(Main.class.getResource("/view/ComDataView.fxml"));
+			loader.setLocation(Main.class.getResource("/view/ComDataView.fxml"));		//유기견 추가 
 			AnchorPane page =  (AnchorPane) loader.load();
 			
 			Stage dialogStage = new Stage();
-			dialogStage.setTitle("부품 추가");
+			dialogStage.setTitle("추가 및 수정");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
@@ -131,14 +130,14 @@ public class Main extends Application {
 		ComponentDAO componentDAO = new ComponentDAO();
 		System.out.println(componentList); //문제점 리스트에 값이 없음
 		int result = componentDAO.saveComponentList(componentList);
-		if( result == 1) {
+		if( result == 1) {	  //ComponentDAO.java에서 받아온 결과값이 1일때, 실행되는 성공 메시지
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.initOwner(primaryStage);
 			alert.setTitle("성공 메시지");
 			alert.setHeaderText("성공적으로 수행했습니다.");
 			alert.setContentText("테이터베이스에 성공적으로 접근했습니다.");
 			alert.showAndWait();
-		} else {
+		} else {	//ComponentDAO.java에서 받아온 결과값이 -1일때(1이 아닐때), 실행되는 오류 메시지
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.initOwner(primaryStage);
 			alert.setTitle("오류 메시지");
@@ -176,7 +175,7 @@ public class Main extends Application {
 	}
 	
 	@FXML
-	public void aboutAction() {
+	public void aboutAction() {		//알아보기란
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("알아보기");
 		alert.setHeaderText("<프로그램 정보>");
